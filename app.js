@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const app = express();
 
@@ -18,4 +19,8 @@ const app = express();
     }
 } )();
 
-module.exports = app.js;
+//Rutas
+
+app.use('/', express.static(path.resolve('PaginaPrincipal')))
+
+module.exports = app;
